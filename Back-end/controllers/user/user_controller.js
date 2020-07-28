@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
+const multer = require('multer');
+var upload = multer({});
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
@@ -133,7 +135,7 @@ router.post('/login',
 router.post('/image', [
     // Check for non-empty fields
     check('user_id').not().isEmpty().trim().escape(),
-    check('image').not().isEmpty().trim().escape()
+    check('image').not().isEmpty()
 ], async function (req, res) {
     // Check validation errors
     const errors = validationResult(req);
