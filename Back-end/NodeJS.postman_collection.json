@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9000/api/user/login",
+					"raw": "http://localhost:9000/api/user/v1/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,6 +29,7 @@
 					"path": [
 						"api",
 						"user",
+						"v1",
 						"login"
 					]
 				}
@@ -37,18 +38,21 @@
 		},
 		{
 			"name": "Upload image",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authentication",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWMxODFlN2RkNzFkMmQ1OGRiZjFkYSIsInVzZXJuYW1lIjoidmlzaGFsIiwiaWF0IjoxNTk1NzY5MDg2LCJleHAiOjE1OTU3NzI2ODZ9.6pRGOhONhgBIQqlmYz9IHSCmkjqGOlv4jbmX8NCC_qo",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWMxODFlN2RkNzFkMmQ1OGRiZjFkYSIsInVzZXJuYW1lIjoidmlzaGFsIiwiaWF0IjoxNTk1OTM1MjEwLCJleHAiOjE1OTU5Mzg4MTB9.HHnMN0McYYaszFiB7GVmjSdHd2O_7I0RbnBdrFejjVw",
 						"type": "text"
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": \"5f1c181e7dd71d2d58dbf1da\",\r\n    \"image\" : \"image\"\r\n}",
+					"mode": "formdata",
+					"formdata": [],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -56,7 +60,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9000/api/user/image",
+					"raw": "http://localhost:9000/api/user/v1/image",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -65,6 +69,7 @@
 					"path": [
 						"api",
 						"user",
+						"v1",
 						"image"
 					]
 				}
@@ -86,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9000/api/user/create",
+					"raw": "http://localhost:9000/api/user/v1/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -95,6 +100,7 @@
 					"path": [
 						"api",
 						"user",
+						"v1",
 						"create"
 					]
 				}
@@ -107,7 +113,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9000/api/user/images",
+					"raw": "http://localhost:9000/api/user/v1/images",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -116,6 +122,7 @@
 					"path": [
 						"api",
 						"user",
+						"v1",
 						"images"
 					]
 				}

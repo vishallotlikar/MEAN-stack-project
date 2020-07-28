@@ -25,7 +25,7 @@ router.all('/', function (req, res) {
 });
 
 // Create new user route controller.
-router.post('/create', [
+router.post('/v1/create', [
     // Check for non-empty fields
     check('username').not().isEmpty().trim().escape(),
     check('password').not().isEmpty().trim().escape()
@@ -65,7 +65,7 @@ router.post('/create', [
 });
 
 // User login route and controller.
-router.post('/login',
+router.post('/v1/login',
     [
         // Check for non-empty fields
         check('username').not().isEmpty().trim().escape(),
@@ -128,7 +128,7 @@ router.post('/login',
     })
 
 // Upload user image
-router.post('/image', [
+router.post('/v1/image', [
     // Check for non-empty fields
     check('user_id').not().isEmpty().trim().escape(),
     check('image').not().isEmpty()
@@ -182,7 +182,7 @@ router.post('/image', [
 })
 
 // View all available images.
-router.get('/images', async function (req, res) {
+router.get('/v1/images', async function (req, res) {
     const image_resp = await image_service.viewAllImages();
     if (image_resp) { // If image document added successfully. 
         res.status(200).json(image_resp);
