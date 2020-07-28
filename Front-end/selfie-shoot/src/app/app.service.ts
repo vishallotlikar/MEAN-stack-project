@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AppService {
 
+  // Headers go here.
   httpOptions = {
     headers: new HttpHeaders({
       'Authentication': null
@@ -19,10 +20,12 @@ export class AppService {
     private http: HttpClient
   ) { }
 
+  // API call to server for login.
   loginUser(userDetailsObj: any): Observable<any> {
     return this.http.post(`http://localhost:9000/api/user/login`, userDetailsObj);
   }
 
+  // API call to server to add an image.
   cameraImage(imageObj: any): Observable<any> {
     return this.http.post('http://localhost:9000/api/user/image', imageObj, this.httpOptions);
   }

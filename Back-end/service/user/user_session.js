@@ -65,16 +65,14 @@ exports.updateUserToken = (_id, token, session) => {
     return User.findOneAndUpdate(
         { _id: _id },
         { token: token },
-        { session: session },
-        function (err, updatedUser) {
-            if (err) {
-                return {
-                    message: 'failed'
-                }
-            } else {
-                return {
-                    message: 'success'
-                }
+        { session: session })
+        .then(result => {
+            return {
+                message: 'success'
+            }
+        }).catch(error => {
+            return {
+                message: 'failed'
             }
         })
 }

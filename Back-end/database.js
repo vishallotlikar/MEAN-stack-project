@@ -9,16 +9,17 @@ mongoose.connect(db_url,
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
-        useFindAndModify: false
+        // useFindAndModify: false
     },
     function (error, link) {
         // Check error
-        // assert.equal(error, null, 'DB connection failed...');
-
-        // Ok
-        console.log('DB connection established...');
-        // console.log(link);
+        if (error) {
+            console.log('DB connection failed. Please restart the server...');
+        } else if (link) {
+            console.log('DB connection established...');
+        }
     }
 ).catch(error => {
-    console.log('DB connection failed...');
+    // console.log('DB connection failed. Please restart the server...');
+    console.log('failed');
 });

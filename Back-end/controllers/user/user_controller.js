@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
-const multer = require('multer');
-var upload = multer({});
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
@@ -82,7 +80,6 @@ router.post('/login',
                 errors: errors.array()
             });
         }
-
         const session = await mongoose.startSession(); // Start a session to rollback if any DB operations fails.
         session.startTransaction(); // Start a transaction.
         // Fetch a current user records.
@@ -103,7 +100,6 @@ router.post('/login',
                 // Create a new JWT token.
                 var token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }); // Tokens valid for 1 hour.
                 user_resp.result.token = token;
-
                 // Assign a newly created token to user.
                 await user_service.updateUserToken(user_resp.result.id, token, session);
                 await session.commitTransaction(); // Commit the transactio if everything worked fine.

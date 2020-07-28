@@ -1,5 +1,12 @@
-::1 - - [28/Jul/2020:11:27:16 +0000] "OPTIONS /api/user/login HTTP/1.1" 204 0
-::1 - - [28/Jul/2020:11:27:16 +0000] "POST /api/user/login HTTP/1.1" 200 475
-::1 - - [28/Jul/2020:11:27:47 +0000] "OPTIONS /api/user/image HTTP/1.1" 204 0
-::1 - - [28/Jul/2020:11:27:48 +0000] "POST /api/user/image HTTP/1.1" 201 55220
-::1 - - [28/Jul/2020:11:28:33 +0000] "GET /api/user/images HTTP/1.1" 200 2524314
+::1 - - [28/Jul/2020:12:30:29 +0000] "OPTIONS /api/user/login HTTP/1.1" 204 0
+::1 - - [28/Jul/2020:12:31:21 +0000] "POST /api/user/create HTTP/1.1" 500 288
+::1 - - [28/Jul/2020:12:31:42 +0000] "OPTIONS /api/user/login HTTP/1.1" 204 0
+::1 - - [28/Jul/2020:12:31:43 +0000] "POST /api/user/login HTTP/1.1" 200 475
+::1 - - [28/Jul/2020:12:32:29 +0000] "POST /api/user/login HTTP/1.1" - -
+::1 - - [28/Jul/2020:12:32:29 +0000] "POST /api/user/login HTTP/1.1" 200 475
+::1 - - [28/Jul/2020:12:32:42 +0000] "OPTIONS /api/user/login HTTP/1.1" 204 0
+::1 - - [28/Jul/2020:12:32:42 +0000] "POST /api/user/login HTTP/1.1" 400 43
+::1 - - [28/Jul/2020:12:32:52 +0000] "OPTIONS /api/user/login HTTP/1.1" 204 0
+::1 - - [28/Jul/2020:12:32:53 +0000] "POST /api/user/login HTTP/1.1" 200 475
+::1 - - [28/Jul/2020:12:33:23 +0000] "OPTIONS /api/user/image HTTP/1.1" 204 0
+::1 - - [28/Jul/2020:12:33:24 +0000] "POST /api/user/image HTTP/1.1" 201 46128

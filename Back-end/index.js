@@ -9,6 +9,7 @@ const userController = require('./controllers/user/user_controller');
 
 
 // middleware seup
+app.use(morgan('dev'));
 app.use(morgan('common', { // log all requests to access.log
     stream: fs.createWriteStream(path.join(__dirname, 'access.log'))
   }))
