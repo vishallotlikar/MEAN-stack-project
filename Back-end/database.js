@@ -9,7 +9,7 @@ mongoose.connect(db_url,
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
-        // useFindAndModify: false
+        useFindAndModify: false
     },
     function (error, link) {
         // Check error
