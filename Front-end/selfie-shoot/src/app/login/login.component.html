@@ -1,0 +1,32 @@
+<div id="login-user-details">
+  <div id="login-form">
+    <div id="page-title">
+      <p id="line-1">Login here</p>
+    </div>
+    <form [formGroup]="loginDetails" class="login-form">
+      <table style="width:100%">
+        <tr>
+          <td>
+            <span class="input-box-label display-block">Username</span>
+          </td>
+          <td>
+            <input class="input-field" type="text" maxlength="50" formControlName="username"
+              [class.input-field-error]="loginDetails.get('username').touched && loginDetails.get('username').errors?.required">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="input-box-label">Password</span>
+          </td>
+          <td>
+            <input class="input-field" type="password" formControlName="password"
+              [class.input-field-error]="(loginDetails.get('password').touched && loginDetails.get('password').errors?.required)">
+          </td>
+        </tr>
+      </table>
+      <div class="btn login-btn" (click)="loginUser()" [class.disabled]="!loginDetails.valid">
+        <div class="login-button">Login</div>
+      </div>
+    </form>
+  </div>
+</div>

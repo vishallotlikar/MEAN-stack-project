@@ -4,13 +4,11 @@ const assert = require('assert');
 const db_url = process.env.DB_URL;
 
 // Connection code
-mongoose.connect(
-    db_url,
+mongoose.connect(db_url,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false
+        useCreateIndex: true
     },
     function (error, link) {
         // Check error
